@@ -2,7 +2,7 @@
     <div>
         <h1>testing</h1>
         <input  ref="user_data2"><br><br>
-        what is typed {{user_data}}
+       
         <button @click="user_entered">items showing equal or less than above price
         </button>
         <section class="{menu_container}">
@@ -26,7 +26,7 @@
         name: 'menu-items',
         methods: {
             user_entered() {
-                this.user_data = this.$refs.user_data2
+                this.user_data = this.$refs.user_data2.value
             }
         },
       
