@@ -1,9 +1,9 @@
 <template>
     <div>
         <h1>testing</h1>
-        <input v-model="user_data"><br><br>
+        <input  ref="user_data2"><br><br>
         what is typed {{user_data}}
-        <button @click="comparePrice">items showing equal or less than above price
+        <button @click="user_entered">items showing equal or less than above price
         </button>
         <section class="{menu_container}">
             <!-- use v-for -->
@@ -24,6 +24,11 @@
 
     export default {
         name: 'menu-items',
+        methods: {
+            user_entered() {
+                this.user_data = this.$refs.user_data2
+            }
+        },
       
        data: function() {
         return {
