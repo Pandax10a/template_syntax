@@ -5,10 +5,10 @@
         what is typed {{user_data}}
         <button @click="comparePrice">items showing equal or less than above price
         </button>
-        <section class="{menu_container}" v-if="">
+        <section class="{menu_container}">
             <!-- use v-for -->
             <div v-for="(item, index) in items" :key="index">
-                <article v-if="{item.price}>={user_data}">
+                <article v-if="user_data>=item.price ">
                 <h3>{{item.title}}</h3>
                 <h3>{{item.price}}</h3>
                 <h3>{{item.description}}</h3>
@@ -24,15 +24,7 @@
 
     export default {
         name: 'menu-items',
-        methods: {
-            comparePrice() {
-                if(user.price<=user_data) {
-                    this.menu_container = true
-                } else if (user.price > this.user_data) {
-                    this.menu_container = false
-                }
-            }
-        },
+      
        data: function() {
         return {
         /*{} for object inside array */ items: [{   
