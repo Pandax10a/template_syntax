@@ -5,13 +5,15 @@
         what is typed {{user_data}}
         <button @click="comparePrice">items showing equal or less than above price
         </button>
-        <section class="{menu_container}" >
+        <section class="{menu_container}" v-if="">
             <!-- use v-for -->
             <div v-for="(item, index) in items" :key="index">
+                <article v-if="{item.price}>={user_data}">
                 <h3>{{item.title}}</h3>
                 <h3>{{item.price}}</h3>
                 <h3>{{item.description}}</h3>
                 <img :src="item.image_url">
+                </article>
                 
             </div>
         </section>
